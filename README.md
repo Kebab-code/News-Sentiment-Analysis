@@ -15,7 +15,7 @@ This project is intended to be run daily, collecting the latest articles, scorin
 The entire pipeline is coordinated through the `main()` function in `project.py`, which executes three core tasks in order: scraping, analyzing, and visualizing.
 
 ### 1. `web_scrape()`
-This function scrapes news articles from the ABC News website. It identifies article links, extracts titles, publication dates, and full text content. It avoids duplicate entries by checking against an existing `articles.csv` file before writing new articles.
+This function scrapes news articles from the ABC News website. It identifies article links, extracts titles, publication dates, and full text content. It avoids duplicate entries by checking against the existing `articles.csv` file before writing new articles.
 
 ### 2. `Sentiment_analysis()`
 After scraping, this function reads all unprocessed articles from `articles.csv` and uses VADER to generate sentiment scores (`neg`, `neu`, `pos`, `compound`). It saves these scores to a `Sentiment_Data.csv` file. Articles are skipped if they’ve already been analyzed, which is determined by title matching against the existing sentiment dataset.
@@ -33,7 +33,7 @@ This visualization function reads `Sentiment_Data.csv`, groups sentiment scores 
     - **`articles.csv`**: Stores scraped article titles, URLs, dates, and content.
     - **`Sentiment_Data.csv`**: Stores sentiment analysis results for each article (one row per article).
 - **`README.md`**: This documentation file.
-- **`requirements.txt`**: Any pip-installable libraries that your project requires listed here
+- **`requirements.txt`**: Any pip-installable libraries that the project requires listed here
 
 ---
 
